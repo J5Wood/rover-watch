@@ -8,9 +8,8 @@
   text-align: center;
 }
 
-h2, h3 {
+h2, h3 , h4{
   margin: 0;
-  padding: 20px;
 }
 
 /* ****** Search Field ****** */
@@ -37,11 +36,23 @@ h2, h3 {
 }
 
 .post{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
   min-height: 250px;
   height: 30%; 
   min-width: 220px;
   width: 25%;
   border: 2px solid black;
   border-radius: 5px;
+  padding: 7px;
+}
 
+.post > a {
+  width: 80%;
+} 
+
+.post > a > img {
+  width: 100%;
 }

@@ -23,12 +23,7 @@ const Content = () => {
         <div className="content">
             <h2>Content:</h2>
             {renderPosts()}
-            {/* <Post></Post>
-            <Post></Post>
-            <Post></Post>
-            <Post></Post> */}
             {console.log(posts)}
-
         </div>
     )
 }
