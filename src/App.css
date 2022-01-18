@@ -13,12 +13,35 @@ h2, h3 {
   padding: 20px;
 }
 
+/* ****** Search Field ****** */
+
 .search-field{
   height: var(--search-bar-height);
   background-color: burlywood;
 }
 
+
+/* ****** Content ****** */
+
 .content{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 40px 20px;
   background-color: cornsilk;
   min-height: calc(100vh - var(--search-bar-height));
+}
+
+.content, h2 {
+  width: 100%;
+}
+
+.post{
+  min-height: 250px;
+  height: 30%; 
+  min-width: 220px;
+  width: 25%;
+  border: 2px solid black;
+  border-radius: 5px;
+
 }
