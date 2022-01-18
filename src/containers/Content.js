@@ -16,6 +16,9 @@ const Content = ({url}) => {
         }
     }
 
+
+    // ********* Render nothing if no pictures on day
+    // nothing on spirit 2010-03-15
     const renderTitle = () => {
         if(posts.length > 0){
             return <h2>{posts[0]["rover"]["name"]}</h2>
