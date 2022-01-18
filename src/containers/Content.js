@@ -18,10 +18,17 @@ const Content = () => {
         }
     }
 
+    const renderTitle = () => {
+        if(posts.length > 0){
+            return <h2>{posts[0]["rover"]["name"]}</h2>
+        } else {
+            return <h2>Loading Pictures...</h2>
+        }
+    }
 
     return (
         <div className="content">
-            <h2>Content:</h2>
+            {renderTitle()}
             {renderPosts()}
             {console.log(posts)}
         </div>
