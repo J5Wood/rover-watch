@@ -1,16 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import Post from './Post'
 
-const Content = () => {
-
-    const [currentUrl, setCurrentUrl] = useState("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=3359&api_key=7iOnoLRhQuWpZJTy7D76y65CbiAEHjOhqezrD6bj")
+const Content = ({url}) => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        fetch(currentUrl)
+        fetch(url)
         .then(resp => resp.json())
         .then(data => setPosts(data.photos))
-    }, [])
+    }, [url])
 
     const renderPosts = () => {
         if(posts.length > 0){
