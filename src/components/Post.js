@@ -19,7 +19,7 @@ const Post = ({"data": {img_src, rover, camera, earth_date}}) => {
     return (
         <div className="post">
             <a target="_blank" rel="noopener noreferrer" href={img_src}>
-            <img src={img_src}></img>
+            <img src={img_src} alt={`Taken by the rover ${rover} with its ${camera["full_name"]}`}></img>
             </a>
             <h3>{rover["name"]} - {camera["full_name"]}</h3>
             <p>{earth_date}</p>
