@@ -1,7 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-import SearchField from './containers/SearchField'
-import Content from './containers/Content'
+import SearchField from './components/SearchField'
+import Content from './components/Content'
 
 function App() {
 
