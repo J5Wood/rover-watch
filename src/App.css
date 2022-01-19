@@ -68,8 +68,6 @@ main {
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
-  min-height: 250px;
-  height: 30%; 
   min-width: 210px;
   width: 25%;
   border: 2px solid black;
@@ -85,6 +83,8 @@ main {
 
 .post > a > img {
   width: 100%;
+  max-width: 220px;
+  max-height: 220px;
 }
 
 .post > button {

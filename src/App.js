@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <main>
         <h1>Search through Mars rover photos</h1>
-        <SearchField setPosts={setPosts} setUrl={setCurrentUrl} setLoading={setLoading}/>
+        <SearchField setPosts={setPosts} setUrl={setCurrentUrl} url={currentUrl} setLoading={setLoading}/>
         <Content posts={posts} loading={loading}/>
       </main>
     </div>

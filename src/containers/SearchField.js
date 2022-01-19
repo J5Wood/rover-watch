@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const SearchField = ({setPosts, setUrl, setLoading}) => {
+const SearchField = ({setPosts, setUrl, url, setLoading}) => {
 
     const today = new Date()
     const day = String(today.getDate()).padStart(2, '0')
@@ -30,9 +30,12 @@ const SearchField = ({setPosts, setUrl, setLoading}) => {
 
     const handleSearch = (e, rover, date) => {
         e.preventDefault()
-        setPosts([])
-        setLoading(true)
-        setUrl(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&api_key=7iOnoLRhQuWpZJTy7D76y65CbiAEHjOhqezrD6bj`)
+        const newUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&api_key=7iOnoLRhQuWpZJTy7D76y65CbiAEHjOhqezrD6bj`
+        if(newUrl !== url){
+            setPosts([])
+            setLoading(true)
+            setUrl(newUrl)
+        }
     }
 
     return (
