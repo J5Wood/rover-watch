@@ -1,15 +1,6 @@
-import {useState, useEffect} from 'react'
 import Post from './Post'
 
-const Content = ({url}) => {
-    const [posts, setPosts] = useState([])
-
-    useEffect(() => {
-        fetch(url)
-        .then(resp => resp.json())
-        .then(data => setPosts(data.photos))
-    }, [url])
-
+const Content = ({posts}) => {
     const renderPosts = () => {
         if(posts.length > 0){
             return posts.map(post => <Post data={post} key={post["id"]}/>)
@@ -17,8 +8,9 @@ const Content = ({url}) => {
     }
 
 
-    // ********* Render nothing if no pictures on day
+    // ********* Need to render nothing if no pictures on a day
     // nothing on spirit 2010-03-15
+
     const renderTitle = () => {
         if(posts.length > 0){
             return <h2>{posts[0]["rover"]["name"]}</h2>
@@ -31,7 +23,6 @@ const Content = ({url}) => {
         <div className="content">
             {renderTitle()}
             {renderPosts()}
-            {console.log(posts)}
         </div>
     )
 }

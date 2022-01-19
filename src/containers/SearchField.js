@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const SearchField = ({setUrl}) => {
+const SearchField = ({setPosts, setUrl}) => {
 
     const today = new Date()
     const day = String(today.getDate()).padStart(2, '0')
@@ -31,6 +31,7 @@ const SearchField = ({setUrl}) => {
 
     const handleSearch = (e, rover, date) => {
         e.preventDefault()
+        setPosts([])
         setUrl(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&api_key=7iOnoLRhQuWpZJTy7D76y65CbiAEHjOhqezrD6bj`)
     }
 
@@ -44,8 +45,8 @@ const SearchField = ({setUrl}) => {
                     <option value="opportunity">Opportunity</option>
                     <option value="spirit">Spirit</option>
                 </select>
-                <input type="date" min={min} max={max} onChange={e => setDate(e.target.value)}></input>
-                <input type="submit"></input>
+                <input type="date" min={min} max={max} onChange={e => setDate(e.target.value)}/>
+                <input type="submit" value="Search"/>
             </form>
         </div>
     )
