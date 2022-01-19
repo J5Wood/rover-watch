@@ -10,6 +10,7 @@ function App() {
   const [loading, setLoading] = useState("initial-load")
 
   useEffect(() => {
+    if(currentUrl.length > 0){
       fetch(currentUrl)
       .then(resp => resp.json())
       .then(data => {
@@ -20,6 +21,7 @@ function App() {
           setPosts(data.photos)
         }
       })
+    }
   }, [currentUrl])
 
   return (
