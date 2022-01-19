@@ -42,7 +42,8 @@ const SearchField = ({setPosts, setUrl, url, setLoading}) => {
         <div className="search-field">
             <h3>Search:</h3> 
             <form onSubmit={e => handleSearch(e, rover, date)}>
-                <select onChange={e => handleRoverChange(e)}>
+                <label htmlFor="rover-select">Rover:</label>
+                <select id="rover-select" onChange={e => handleRoverChange(e)}>
                     <option value="curiosity">Curiosity</option>
                     <option value="opportunity">Opportunity</option>
                     <option value="spirit">Spirit</option>

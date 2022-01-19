@@ -48,7 +48,6 @@ main {
   gap: 15px;
 }
 
-
 /* ****** Content ****** */
 
 .content {
@@ -56,7 +55,7 @@ main {
   flex-flow: row wrap;
   justify-content: space-evenly;
   gap: 40px 20px;
-  padding: 30px;
+  padding: 10px 7px;
 }
 
 .content > h2 {
