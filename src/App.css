@@ -8,6 +8,7 @@
   background-color: aquamarine;
   text-align: center;
   background: linear-gradient(54deg, rgba(172,80,242,.3) 0%, rgba(0, 116, 139, .65) 23%, rgba(0, 139, 139, .8) 46%, rgba(0, 139, 58, 0.6) 75%, rgba(189, 236, 18, 0.2) 100%);
+  min-height: 100vh;
 }
 
 h1 {
@@ -55,7 +56,7 @@ main {
   flex-flow: row wrap;
   justify-content: space-evenly;
   gap: 40px 20px;
-  min-height: calc(100vh - var(--search-bar-height));
+  padding: 30px;
 }
 
 .content > h2 {
