@@ -16,8 +16,11 @@ function App() {
 
   return (
     <div className="App">
-      <SearchField setPosts={setPosts} setUrl={setCurrentUrl}/>
-      <Content posts={posts} />
+      <main>
+        <h1>Search through Mars rover photos</h1>
+        <SearchField setPosts={setPosts} setUrl={setCurrentUrl}/>
+        <Content posts={posts} />
+      </main>
     </div>
   );
 }
