@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const SearchField = ({setPosts, setUrl}) => {
+const SearchField = ({setPosts, setUrl, setLoading}) => {
 
     const today = new Date()
     const day = String(today.getDate()).padStart(2, '0')
@@ -19,7 +19,6 @@ const SearchField = ({setPosts, setUrl}) => {
     const [max, setMax] = useState(curiosityMax)
     const [date, setDate] = useState(curiosityMax)
 
-
     const handleRoverChange = (e) => {
         setRover(e.target.value)
         const dateField = document.querySelector(".search-field form input")
@@ -32,9 +31,9 @@ const SearchField = ({setPosts, setUrl}) => {
     const handleSearch = (e, rover, date) => {
         e.preventDefault()
         setPosts([])
+        setLoading(true)
         setUrl(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&api_key=7iOnoLRhQuWpZJTy7D76y65CbiAEHjOhqezrD6bj`)
     }
-
 
     return (
         <div className="search-field">

@@ -5,21 +5,29 @@ import Content from './containers/Content'
 
 function App() {
 
-  const [currentUrl, setCurrentUrl] = useState("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=7iOnoLRhQuWpZJTy7D76y65CbiAEHjOhqezrD6bj")
+  const [currentUrl, setCurrentUrl] = useState("")
   const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState("initial-load")
 
   useEffect(() => {
       fetch(currentUrl)
       .then(resp => resp.json())
-      .then(data => setPosts(data.photos))
+      .then(data => {
+        if(data.photos.length === 0){
+          setPosts([])
+          setLoading(false)
+        } else {
+          setPosts(data.photos)
+        }
+      })
   }, [currentUrl])
 
   return (
     <div className="App">
       <main>
         <h1>Search through Mars rover photos</h1>
-        <SearchField setPosts={setPosts} setUrl={setCurrentUrl}/>
-        <Content posts={posts} />
+        <SearchField setPosts={setPosts} setUrl={setCurrentUrl} setLoading={setLoading}/>
+        <Content posts={posts} loading={loading}/>
       </main>
     </div>
   );

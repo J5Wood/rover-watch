@@ -16,7 +16,6 @@ const Post = ({"data": {img_src, rover, camera, earth_date}}) => {
         }
     }
 
-
     return (
         <div className="post">
             <a target="_blank" rel="noopener noreferrer" href={img_src}>
